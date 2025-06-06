@@ -18,7 +18,7 @@ data/processed/
 models/
 outputs/
 
-# IDEs and editors
+# IDEs
 .vscode/
 .idea/
 
