@@ -14,4 +14,16 @@ with segyio.open(Path("data/raw/ST0202R08_PZ_PSDM_FULL_OFFSET_PP_TIME.MIG_FIN.PO
     print(f"Number of non-zero values: {np.count_nonzero(data_to_np)}")
     print(f"Total number of values: {data_to_np.size}")
 
+
+    np.save("data/processed/ST0202_full_cube_notnormal.npy",data_to_np)
     
+    data_to_np_normalized = data_to_np.copy()
+    data_to_np_normalized_min = data_to_np_normalized.min()
+    data_to_np_normalized_max = data_to_np_normalized.max()
+    data_to_np_normalized_scaled = 2* (data_to_np_normalized - data_to_np_normalized_min) / (data_to_np_normalized_max - data_to_np_normalized_min) -1
+
+    np.save("data/processed/ST0202_full_cube_normalized.npy",data_to_np_normalized_scaled)
+
+#Depth, inline, crossline dimension for cube 
+
+
