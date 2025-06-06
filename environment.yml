@@ -1,0 +1,53 @@
+name: seismic-denoising
+channels:
+  - conda-forge
+  - nvidia
+  - pytorch
+  - defaults
+
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - tqdm
+  - jupyterlab
+  - ipywidgets
+
+  # PyTorch
+  - pytorch
+  - pytorch-cuda=12.1
+
+  # 3D Imaging
+  - monai
+  - scikit-image
+  - nibabel
+  - segyio
+  - opencv
+  - vedo
+  - imageio
+
+  # Model Architecture
+  - einops
+  - transformers
+
+  # Augmentations
+  - scikit-learn
+  - torchvision
+  - albumentations
+
+  # Optimization
+  - scipy
+  - cvxpy
+
+  # File IO
+  - h5py
+  - zarr
+  - pyarrow
+  - pyyaml
+
+  - pip:
+      - ray[tune,dashboard]
+      - optuna 
